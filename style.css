@@ -4,6 +4,12 @@ body {
     padding: 20px;
 }
 
+.con {
+    width: 300px;
+    margin: 0 auto;   /* ← これで中央配置 */
+    text-align: left; /* ← 文字は左揃え */
+}
+
 h1 {
   text-align: center;
   color: #333;
@@ -24,8 +30,15 @@ label {
 }
 
 input[type="text"],
-select[name="sei"],
 textarea {
+  width: 97%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select[name="sei"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 12px;
@@ -44,4 +57,13 @@ button {
 
 button:hover {
   background-color: #0053ba;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }

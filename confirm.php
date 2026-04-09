@@ -5,35 +5,49 @@
     <title>申請内容確認</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class = "con">
     <h1>申請内容の確認</h1>
     <?php
     //POSTリクエストから名前を取得して表示する
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $username = $_POST["username"];
-        $booktitle = $_POST["booktitle"];
-        $bookcode = $_POST["bookcode"];
-        $period = $_POST["period"];
-        $note = $_POST["note"];
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $question = $_POST['question'];
+        $sei = $_POST['sei'];
+        $gender_list = [
+            '1' => '男性',
+            '2' => '女性'
+        ];
+        $gender = $gender_list[$sei];
 
         //バリデーション
-        if (!preg_match("/^[ぁ-んァ-ヶー一-龠a-zA-Z\s]+$/u", $username)) {
-        echo "<p>利用者名は日本語または英字のみで入力してください。</p>";
-        } elseif (!preg_match("/^[a-zA-Z0-9]{1,10}$/", $bookcode)) {
-        echo "<p>図書コードは英数字のみで10文字以内にしてください。</p>";
-        } elseif (!is_numeric($period) || $period < 1 || $period > 30) {
-            echo "<p>貸出期間は1日〜30日の間で入力してください。</p>";
+        if (!preg_match('/^[ぁ-んァ-ヶー一-龠a-zA-Z]+$/u', $name)) {    // name
+            echo "<p>名前はひらがな、カタカナ、漢字、英字のみ使用できます。</p>";
+        } elseif (!is_numeric($age) || $age < 0 || $age > 150) {  // age
+            echo "<p>年齢は0から150の間で入力してください。</p>";
+        } elseif (!preg_match('/^[0-9\-]+$/', $phone)) { // phone
+            echo "<p>電話番号は半角数字とハイフンのみ使用できます。</p>";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  // email
+            echo "<p>メールアドレスの形式が正しくありません。</p>";
+        } elseif (!preg_match('/^[ぁ-んァ-ヶー一-龠a-zA-Z]+$/u', $address)) {  // address
+            echo "<p>住所はひらがな、カタカナ、漢字、英字のみ使用できます。</p>";
+        
         } else {
-            //入力内容の表示
-        echo "<p>利用者名：" .htmlspecialchars($username,ENT_QUOTES, 'UTF-8'). "</p>";
-        echo "<p>書籍タイトル：" .htmlspecialchars($booktitle,ENT_QUOTES, 'UTF-8'). "</p>";
-        echo "<p>図書コード：{$bookcode}</p>";
-        echo "<p>貸出期間：{$period}日</p>";
-        echo "<p>備考：" .nl2br(htmlspecialchars($note,ENT_QUOTES, 'UTF-8')). "</p>";
+            echo "<p>名前：" . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<p>年齢：" . htmlspecialchars($age, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<p>電話番号：" . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<p>メールアドレス：" . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<p>住所：" . htmlspecialchars($address, ENT_QUOTES, 'UTF-8') . "</p>";
+            // 質問欄（任意なので空でも表示OK）
+            echo "<p>質問：" . nl2br(htmlspecialchars($question, ENT_QUOTES, 'UTF-8')) . "</p>";
+            echo "<p>性別：" . htmlspecialchars($gender, ENT_QUOTES, 'UTF-8') . "</p>";
         }
-    } else {
-        echo "<p>データが送信されていません。</p>";
     }
     ?>
+
+    <a href="form.php" class = "btn">フォーム画面</a>
 </body>
 </html>

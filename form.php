@@ -28,8 +28,8 @@
 
         <label for="gender">性別：</label>
         <select name="sei">
-            <option value="1">男</option>
-            <option value="2">女</option>
+            <option value="1">男性</option>
+            <option value="2">女性</option>
         </select><br><br>
 
         <button type="submit">送信</button>
