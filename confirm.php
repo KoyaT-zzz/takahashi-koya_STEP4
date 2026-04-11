@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>申請内容確認</title>
+    <title>入力内容確認</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class = "con">
-    <h1>申請内容の確認</h1>
+    <h1>入力内容確認</h1>
     <?php
     //POSTリクエストから名前を取得して表示する
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -47,7 +47,7 @@
         }
     }
     ?>
-
+    <br><br>
     <a href="form.php" class = "btn">フォーム画面</a>
 </body>
 </html>

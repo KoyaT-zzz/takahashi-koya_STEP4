@@ -3,11 +3,15 @@ body {
     background-color: #f7f9fa;
     padding: 20px;
 }
-
+.for {
+  width: 900px;
+  margin: 0 auto;
+  background-color: #ebeaea;
+}
 .con {
     width: 300px;
-    margin: 0 auto;   /* ← これで中央配置 */
-    text-align: left; /* ← 文字は左揃え */
+    margin: 0 auto;   /* 中央配置 */
+    text-align: left; /* 文字は左揃え */
 }
 
 h1 {
@@ -34,7 +38,7 @@ textarea {
   width: 97%;
   padding: 8px;
   margin-bottom: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #505050;
   border-radius: 4px;
 }
 
@@ -42,28 +46,35 @@ select[name="sei"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #505050;
   border-radius: 4px;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #0069d9;
-  color: #fff;
-  border: none;
+  background-color: #ccdef1;
+  color: #363636;
+  border: 1px solid #505050;
   border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0053ba;
+  background-color: #318eff;
+  color: #e7e7e7;
 }
 
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
+  background-color: #e1f3ff;
+  border: 1px solid black;
+  color: #242424;
   text-decoration: none;
   border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #318eff;
+  color: #e8e8e8;
 }

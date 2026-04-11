@@ -5,16 +5,16 @@
     <title>フォーム入力</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class = "for">
     <h1>フォーム入力</h1>
     <form action="confirm.php" method="post">
         <label for="name">名前：</label>
         <input type="text" id="name" name="name"><br><br>
 
-        <label for="age">年齢：</label>
+        <label for="age">年齢（半角入力）：</label>
         <input type="text" id="age" name="age"><br><br>
 
-        <label for="phone">電話番号：</label>
+        <label for="phone">電話番号（半角入力）：</label>
         <input type="text" id="phone" name="phone"><br><br>
 
         <label for="email">メールアドレス：</label>
