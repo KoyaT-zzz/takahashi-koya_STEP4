@@ -52,7 +52,7 @@ select[name="sei"] {
 
 button {
   padding: 10px 20px;
-  background-color: #ccdef1;
+  background-color: #e1f3ff;
   color: #363636;
   border: 1px solid #505050;
   border-radius: 4px;
@@ -61,7 +61,7 @@ button {
 
 button:hover {
   background-color: #318eff;
-  color: #e7e7e7;
+  color: #f3f3f3;
 }
 
 .btn {
@@ -76,5 +76,5 @@ button:hover {
 
 .btn:hover {
   background-color: #318eff;
-  color: #e8e8e8;
+  color: #f3f3f3;
 }
