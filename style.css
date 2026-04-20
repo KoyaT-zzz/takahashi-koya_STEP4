@@ -37,15 +37,15 @@ input[type="text"],
 textarea {
   width: 97%;
   padding: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
   border: 1px solid #505050;
   border-radius: 4px;
 }
 
-select[name="sei"] {
+select[name="gender"] {
   width: 100%;
   padding: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
   border: 1px solid #505050;
   border-radius: 4px;
 }
